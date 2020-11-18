@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <string.h>
 #include <math.h>
@@ -11,10 +11,10 @@ void Autotest();
 class CNode;
 class CStack {
 private:
-	Node* head=NULL;
-	int size; // количество строк в стеке 
-	int N;  // допустимая длина строк в стеке
-	int t; // количество сброшенных в файл строк в прошлый раз
+	Node* head = NULL;
+	int size; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГ°Г®ГЄ Гў Г±ГІГҐГЄГҐ 
+	int N;  // Г¤Г®ГЇГіГ±ГІГЁГ¬Г Гї Г¤Г«ГЁГ­Г  Г±ГІГ°Г®ГЄ Гў Г±ГІГҐГЄГҐ
+	int t; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГЎГ°Г®ГёГҐГ­Г­Г»Гµ Гў ГґГ Г©Г« Г±ГІГ°Г®ГЄ Гў ГЇГ°Г®ГёГ«Г»Г© Г°Г Г§
 public:
 	CStack() = delete;
 	CStack(int& x) {
@@ -33,7 +33,7 @@ public:
 		t = b.t;
 		head = b.head;
 	}
-	
+
 	void Clean() {
 		SetZero();
 	}
@@ -54,9 +54,9 @@ public:
 		return *this;
 	}
 
-	int push(const string& x, ofstream& stack);
+	int push(const string& x, const char* filename);
 
-	int SizeString() {//длина вершины
+	int SizeString() {//Г¤Г«ГЁГ­Г  ГўГҐГ°ГёГЁГ­Г»
 		if (size == 0) {
 			return 0;
 		}
@@ -64,7 +64,7 @@ public:
 			return head->data.length();
 		}
 	}
-	int GetSize() {    //текущая длина всех строк в стеке
+	int GetSize() {    //ГІГҐГЄГіГ№Г Гї Г¤Г«ГЁГ­Г  ГўГ±ГҐГµ Г±ГІГ°Г®ГЄ Гў Г±ГІГҐГЄГҐ
 		int n = 0;
 		Node* p = head;
 		while (head != NULL) {
@@ -75,7 +75,7 @@ public:
 		return n;
 	}
 
-	int pop(ifstream& stack);
+	int pop(const char* filename);
 
 	void poptop() {
 		size--;
@@ -86,7 +86,7 @@ public:
 
 	int Get(string& x)
 	{
-		if (IsEmpty()==0) {
+		if (IsEmpty() == 0) {
 			return -1;
 		}
 		else {
@@ -97,12 +97,12 @@ public:
 	int SizeStack() {
 		return size;
 	}
-	int fill(ifstream& file, ofstream& file1, int& N);
+	int fill(const char* filename);
 	void Print() {
 		Node* p = head;
-		while(head != NULL)
+		while (head != NULL)
 		{
-			cout << head->data<<endl;
+			cout << head->data << endl;
 			head = head->next;
 		}
 		head = p;

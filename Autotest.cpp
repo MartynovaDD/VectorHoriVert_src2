@@ -1,4 +1,4 @@
-#include "CStack.h"
+п»ї#include "CStack.h"
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -9,13 +9,14 @@ void Autotest(void) {
 	string s;
 	string st = "haha";
 	string str = "ha";
-	ifstream istack("autotest.txt"); // файл со стеком
+	ifstream istack("autotest.txt"); // ГґГ Г©Г« Г±Г® Г±ГІГҐГЄГ®Г¬
 	ofstream ostack("autotest.txt");
-	A.push(st, ostack);
-	A.push(str, ostack);
+	const char* f = "autotest.txt";
+	A.push(st, f);
+	A.push(str, f);
 	A.Get(s);
-	A.pop(istack);
-	if (A.SizeString() != 4 || A.SizeStack() != 1 || s!="ha") {
+	A.pop(f);
+	if (A.SizeString() != 4 || A.SizeStack() != 1 || s != "ha") {
 		cout << "Autotest falled..." << endl;
 	}
 	else {
