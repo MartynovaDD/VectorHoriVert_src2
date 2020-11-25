@@ -43,6 +43,7 @@ int main() {
 		A.pop(f);
 		A.pop(f);
 		A.pop(f);
+		A.pop(f);
 		cout << "pop:" << endl;
 		A.Print();
 		cout << "vertex length:";

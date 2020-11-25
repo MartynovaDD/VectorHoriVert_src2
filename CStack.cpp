@@ -27,9 +27,20 @@ int CStack::push(const string& x, const char* filename) {//ifstream не надо
         head = head->next;
         while (head != NULL)
         {
+            ifstream ist(filename);
+            ofstream dopf("prosto.txt");
+            while (getline(ist, s)) {
+                dopf << s << endl;
+            }
+            ist.close();
+            ofstream ostack("datadat.txt");
             ostack << head->data << endl;
             t++;
             head = head->next;
+            ifstream dopf1("prosto.txt");
+            while (getline(dopf1, s)) {
+                ostack << s << endl;
+            }
         }
         ifstream idop("prostotak.txt");
         while (getline(idop, s)) {
