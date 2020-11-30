@@ -12,9 +12,12 @@ class CNode;
 class CStack {
 private:
 	Node* head = NULL;
+	int* arr = new int[10];
+	int d = 0;
 	int size; // êîëè÷åñòâî ñòðîê â ñòåêå 
 	int N;  // äîïóñòèìàÿ äëèíà ñòðîê â ñòåêå
 	int t; // êîëè÷åñòâî ñáðîøåííûõ â ôàéë ñòðîê â ïðîøëûé ðàç
+	
 public:
 	CStack() = delete;
 	CStack(int& x) {
